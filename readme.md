@@ -17,7 +17,7 @@ Hierzu würde sich meiner Meinung nach der include von curses mod lohnen.
 Einfach zu handhaben und erzeugt uns die 7 system farben, hier ein kleines
 Beispiel für die die es nicht kennen von einem meiner anderen Projekte:
 
-[!Screenshot](http://ohsystem.net/gproxy/gproxy.jpg)
+![ScreenShot](http://ohsystem.net/gproxy/gproxy.jpg)
 
 Was meint ihr dazu? Einfach zum mitreden die readme editieren, aber bitte schön
 trennen, heißt 3x- vor jedem Kommentar hauen und namen als erstes schreiben :-)
