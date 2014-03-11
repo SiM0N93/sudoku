@@ -25,3 +25,12 @@ trennen, heißt 3x- vor jedem Kommentar hauen und namen als erstes schreiben :-)
 So können wir alles gut im Überblick halten.
 
 ---
+
+---
+
+Mark
+
+Ich haben für GIT (Nicht für GitHub) eine [Git Book DE](http://git-scm.com/book/de/) 
+Die ich information suchen im internet gefunden haben, Sie hat mir sehr geholfen hat.
+
+---
