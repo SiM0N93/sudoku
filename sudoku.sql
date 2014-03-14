@@ -1,11 +1,3 @@
--- phpMyAdmin SQL Dump
--- version 4.0.9
--- http://www.phpmyadmin.net
---
--- Host: 127.0.0.1
--- Erstellungszeit: 14. Mrz 2014 um 18:38
--- Server Version: 5.5.34
--- PHP-Version: 5.4.22
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -19,21 +11,21 @@ SET time_zone = "+00:00";
 --
 -- Datenbank: `sudoku`
 --
-CREATE DATABASE IF NOT EXISTS `sudoku` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+CREATE DATABASE IF NOT EXISTS `sudoku` DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
 USE `sudoku`;
 
 -- --------------------------------------------------------
 
 --
--- Tabellenstruktur für Tabelle `useraccounts`
+-- Tabellenstruktur für Tabelle `accounts`
 --
 
 CREATE TABLE IF NOT EXISTS `useraccounts` (
   `id` smallint(4) unsigned NOT NULL AUTO_INCREMENT,
-  `vorname` varchar(25) COLLATE utf8_unicode_ci NOT NULL,
-  `nachname` varchar(25) COLLATE utf8_unicode_ci NOT NULL,
-  `nick` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
-  `passwort` varchar(28) COLLATE utf8_unicode_ci NOT NULL,
+  `first_name` varchar(25) COLLATE utf8_unicode_ci NOT NULL,
+  `last_name` varchar(25) COLLATE utf8_unicode_ci NOT NULL,
+  `username` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+  `password` varchar(28) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
 

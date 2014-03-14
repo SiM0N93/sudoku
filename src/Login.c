@@ -9,21 +9,20 @@ int login(void)
 
     do
     {
-        /* Ausgabe fuer Login */
         printf("\t\tL O G I N\n");
         printf("\t\t= = = = =\n\n");
         if(authentifactionStatus==0 && i!=0) {
             printf("\t========================================\n");
-            printf("\t= Fehler! Dieser User existiert nicht. =\n");
+            printf("\t==  Error! The user does not exsist.  ==\n");
             printf("\t========================================\n\n\n");
         } else if( authentifactionStatus == 1) {
             printf("\t=========================\n");
-            printf("\t= Fehler! Falsches Passwort. =\n");
+            printf("\t= Error! Wrong password =\n");
             printf("\t=========================\n\n\n");
         }
         system("cls");
         fflush(stdin);
-        printf("\tNickname: ");
+        printf("\tUsername: ");
         scanf("%s", &cNickname);
         fflush(stdin);
         printf("\tPassword: ");
@@ -42,7 +41,7 @@ int authentificationStatus( char cNickname, char cPassword )
     MYSQL_RES *username=NULL, *passwordcheck=NULL;
     MYSQL *Connection = MySQLConnect ();
 
-    sprintf(cQuery, "SELECT id FROM useraccounts WHERE nickname = '%s';",
+    sprintf(cQuery, "SELECT id FROM accounts WHERE username = '%s';",
             cNickname );
     username = QueryBuilder (Connection, cQuery);
     if( username ) {
@@ -56,7 +55,7 @@ int authentificationStatus( char cNickname, char cPassword )
      }
     sprintf(
      cQuery,
-     "SELECT id FROM useraccounts WHERE nickname ='%s' AND password=MD5('%s');",
+     "SELECT id FROM accounts WHERE username ='%s' AND password=MD5('%s');",
      cNickname,
      cPassword
     );

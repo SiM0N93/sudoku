@@ -34,31 +34,28 @@ void registrierung(void)
     /* Ausgabe fuer Registrierungsinfos */
     printf("             R E G I S T R I E R U N G\n");
     printf("            = = = = = = = = = = = = = =\n\n\n");
-    printf("Im Folgenden benoetigen wir fuer die Registrierung\n");
-    printf("eines neuen Spielaccounts einige Daten, die Sie\n");
-    printf("einfach eingeben koennen.\n");
 
     /* Leeren des Eingabespeichers */
     fflush(stdin);
 
     /* Einlesen der verschiedenen Werte */
-    printf("\n\nVorname: ");
+    printf("\n\nFirst name: ");
     scanf("%s", &cVorname);
     fflush(stdin);
-    printf("\nNachname: ");
+    printf("\nLast name: ");
     scanf("%s", &cNachname);
     fflush(stdin);
-    printf("\nNickname: ");
+    printf("\nUsername: ");
     scanf("%s", &cNickname);
     fflush(stdin);
-    printf("\nPasswort: ");
+    printf("\nPassword: ");
     scanf("%s", &cPasswort);
     fflush(stdin);
 
     /* Query festlegen */
     sprintf(
      cQuery,
-     "INSERT INTO useraccounts VALUES (NULL, '%s', '%s', '%s', MD5('%s'))",
+     "INSERT INTO accounts VALUES (NULL, '%s', '%s', '%s', MD5('%s'))",
      cVorname,
      cNachname,
      cNickname,
@@ -72,9 +69,9 @@ void registrierung(void)
     mysql_free_result(result);
 
     /* Ausgabe bei Erfolg */
-    printf("\n\nVielen Dank fuer Ihre Registrierung.\n");
-    printf("Ihr Account wurde soeben angelegt.\n\n");
-
+    printf("\n\nThank you for your registration.\n");
+    printf("Your account has been created, please press a key to continue.\n\n");
     MySQLClose (Connection);
+	 getchar();
     return;
 }
