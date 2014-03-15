@@ -12,10 +12,7 @@
 */
 int main(void)
 {
-    /* Funktionsaufruf fuer registrierung */
-    registrierung();
 
-    /* Eingabespeicher leeren und pausieren */
     fflush(stdin);
     getchar();
     return 0;
