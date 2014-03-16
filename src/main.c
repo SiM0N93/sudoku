@@ -12,6 +12,7 @@ void resize(void);
 */
 int main(void)
 {
+    rezise ();
 
     fflush(stdin);
     getchar();
@@ -21,5 +22,6 @@ int main(void)
 
 void rezise(void)
 {
-
+    system("mode 650");
+    return;
 }
