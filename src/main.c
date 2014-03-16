@@ -22,6 +22,9 @@ int main(void)
 
 void rezise(void)
 {
-    system("mode 650");
+   /* mode 200 means the console window is 200 lines * 200 chars on the size
+    * this is enough for us to rezise. We do not care the 200 lines are too much
+    * it doesnt affect us */
+    system("mode 200");
     return;
 }
