@@ -1,7 +1,7 @@
 #include "util.h"
 #include "register.h"
 
-
+void resize(void);
 /* ============================================================================
 * Funktion:        main
 * Input:           -
@@ -16,4 +16,10 @@ int main(void)
     fflush(stdin);
     getchar();
     return 0;
+}
+
+
+void rezise(void)
+{
+
 }

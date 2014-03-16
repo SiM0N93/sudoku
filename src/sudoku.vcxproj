@@ -15,7 +15,7 @@
 	 <ClInclude Include="login.h" />
 	 <ClInclude Include="register.h" />
 	 <ClInclude Include="util.h" />
-	 <ClInclude Include="printing.h" />
+	 <ClInclude Include="included/printing.h" />
   </ItemGroup>
   <ItemGroup>
 	 <ClCompile Include="database_connection.c" />
@@ -23,7 +23,7 @@
 	 <ClCompile Include="main.c" />
 	 <ClCompile Include="register.c" />
 	 <ClCompile Include="util.c" />
-	 <ClCompile Include="printing.c" />
+	 <ClCompile Include="included/printing.c" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
 	 <ProjectGuid>{200C628E-5930-4E81-A89F-94E4E7FE50B2}</ProjectGuid>

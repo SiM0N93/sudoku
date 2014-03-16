@@ -27,7 +27,7 @@
 	 <ClInclude Include="util.h">
 		<Filter>Headerdateien</Filter>
 	 </ClInclude>
-	 <ClInclude Include="printing.h">
+	 <ClInclude Include="included/printing.h">
 		<Filter>Headerdateien</Filter>
 	 </ClInclude>
   </ItemGroup>
@@ -47,7 +47,7 @@
 	 <ClCompile Include="util.c">
 		<Filter>Ressourcendateien</Filter>
 	 </ClCompile>
-	 <ClCompile Include="printing.c">
+	 <ClCompile Include="included/printing.c">
 		<Filter>Ressourcendateien</Filter>
 	 </ClCompile>
   </ItemGroup>
