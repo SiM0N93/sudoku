@@ -1,0 +1,15 @@
+Arbeitseinteilung:
+
+* Layout:
+- Menu/Layout/Subemnu			    Brünemann
+- Sudoku Feld UI					Houben
+- Bestenliste						Tilgner
+- Hilfe Seite/Impressum			    Zimmermann
+- Profile View						Tilgner/Schneider
+
+*Logik:
+- Datenbank							Schneider
+- dynamischer Aufbau				Dormann
+- Hilfestellung					    Dormann
+- Controlling						Tilgner
+- Update function					Schneider
