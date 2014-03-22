@@ -2,10 +2,11 @@
 #include "database_connection.h"
 #include "login.h"
 
-int login(void)
+ACCOUNT login(void)
 {
     int iStatus=0, i=0;
     char cNickname[20], cPassword[28];
+	 ACCOUNT userAccount;
 
     do
     {
@@ -30,7 +31,10 @@ int login(void)
         iStatus = authentificationStatus(cNickname, cPassword);
         i++;
     } while( iStatus!=2 && i<5);
-    return iStatus;
+	 if(iStatus==2) {
+		 userAccount = getUser(cNickname, cPassword);
+	 }
+    return userAccount;
 }
 
 int authentificationStatus( char cNickname[20], char cPassword[28] )
@@ -77,4 +81,53 @@ int authentificationStatus( char cNickname[20], char cPassword[28] )
 	 }
     MySQLClose (Connection);
     return 0;
+}
+
+ACCOUNT getUser(char cNickname[20], char cPassword[28])
+{
+	int num_fields=0,i=0, arraysize=0;
+	char cQuery[300];
+	MYSQL_ROW ROW;
+	ACCOUNT user;
+   MYSQL_RES *userEntity=NULL;
+   MYSQL *Connection = NULL;
+	Connection = MySQLConnect ();
+   sprintf(cQuery, 
+   "SELECT first_name, last_name, username FROM accounts WHERE username ='%s' AND password=MD5('%s');",
+         cNickname,
+			cPassword
+	);
+   userEntity = QueryBuilder (Connection, cQuery);
+	if(userEntity )
+	{
+		ROW = mysql_fetch_row( userEntity );
+		if( ROW )
+		{
+			num_fields = mysql_num_fields(userEntity);
+			for( i=0; i<num_fields; i++ )
+			{
+				if( ROW[i] )
+				{
+					
+					if(0==i)
+					{
+						strcpy(user.FirstName, ROW[0]);
+					}
+					else if(1==i)
+					{
+						strcpy(user.LastName, ROW[1]);
+					}
+					else if(2==i)
+					{
+						strcpy(user.UserName, ROW[2]);
+					}
+				}
+			}
+		}
+	} else {
+		DEBUG_Log("The user does not exsist in the database");
+	}
+	mysql_free_result(userEntity);
+	MySQLClose (Connection);
+	return user;	
 }

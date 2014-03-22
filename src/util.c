@@ -8,12 +8,20 @@
 * Beschreibung:    Output fuer eventuelle Fehlerund Debugausgaben.
 * ==============================================================================
 */
-void output(char *text, int debug)
+void DEBUG_Log(char *text)
 {
-    if (debug == 1)
+    if (DEBUG == 1)
     {
         printf("\n[Debug] %s\n", text);
     }
-	 getchar();
     return;
+}
+
+int getArraySizeForChar( char *Array ) {
+	int Size = sizeof(Array) / sizeof(char);
+   return Size-1;
+}
+int getArraySizeForInt( int *Array ) {
+	int Size = sizeof(Array) / sizeof(int);
+   return Size;
 }
