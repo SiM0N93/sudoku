@@ -14,6 +14,6 @@ void output(char *text, int debug)
     {
         printf("\n[Debug] %s\n", text);
     }
-
+	 getchar();
     return;
 }

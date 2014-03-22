@@ -3,7 +3,7 @@
 #include "register.h"
 
 
-MYSQL_RES *QueryBuilder( MYSQL* Connection, char cQuery )
+MYSQL_RES *QueryBuilder( MYSQL* Connection, char* cQuery )
 {
     if( mysql_query( Connection, cQuery ) )
     {

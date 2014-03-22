@@ -3,6 +3,6 @@
 
 /* deklaration der Prototypen */
 int login(void);
-int authentificationStatus(char Username, char Password);
+int authentificationStatus( char cNickname[20], char cPassword[28] );
 
 #endif // LOGIN_H

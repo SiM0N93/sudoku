@@ -8,7 +8,7 @@
 
 #define _CRT_SECURE_NO_WARNINGS
 /* DEBUG: 0 - Keine Meldungen 1 - Debugmeldungen*/
-#define DEBUG 0
+#define DEBUG 1
 
 void output(char *text, int debug);
 

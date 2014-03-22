@@ -7,12 +7,12 @@
 /* Define database connection settings */
 #define DB_HOST "127.0.0.1"
 #define DB_USER "root"
-#define DB_PASSWORD "12345"
-#define DB_DATABASE "sudoko"
+#define DB_PASSWORD ""
+#define DB_DATABASE "sudoku"
 #define DB_PORT 0
 
-MYSQL_RES *QueryBuilder( MYSQL* Connection, char cQuery );
+MYSQL_RES *QueryBuilder( MYSQL* Connection, char* cQuery );
 MYSQL* MySQLConnect(void);
-void MySQLClose(void);
+void MySQLClose(MYSQL* Connection);
 
 #endif // DATABASE_CONNECTION_H
