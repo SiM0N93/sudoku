@@ -70,7 +70,7 @@ void registrierung(void)
 
     /* Ausgabe bei Erfolg */
     printf("\n\nThank you for your registration.\n");
-    printf("Your account has been created, please press a key to continue.\n\n");
+    printf("Your account has been created, please press a key to return to the main menue.\n\n");
     MySQLClose (Connection);
 	 getchar();
     return;

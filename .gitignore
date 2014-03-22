@@ -1,2 +1,11 @@
 *.sdf
 *.opensdf
+*.exe
+*.pdb
+*.ipch
+*.tlog
+*.manifest
+*.lastbuildstate
+*.obj
+*.log
+*.cache

@@ -10,26 +10,26 @@ int login(void)
     do
     {
         system("cls");
-        printf("\tL O G I N\n");
-        printf("\t= = = = =\n\n");
+        printf("L O G I N\n");
+        printf("= = = = =\n\n");
         if(iStatus==0 && i!=0) {
-            printf("\t========================================\n");
-            printf("\t==  Error! The user does not exsist.  ==\n");
-            printf("\t========================================\n\n\n");
+            printf("========================================\n");
+            printf("==  Error! The user does not exsist.  ==\n");
+            printf("========================================\n\n\n");
         } else if( iStatus == 1) {
-            printf("\t=========================\n");
-            printf("\t= Error! Wrong password =\n");
-            printf("\t=========================\n\n\n");
+            printf("=========================\n");
+            printf("= Error! Wrong password =\n");
+            printf("=========================\n\n\n");
         }
-        printf("\tUsername: ");
+        printf("Username: ");
         scanf("%s", &cNickname);
         fflush(stdin);
-        printf("\tPassword: ");
+        printf("Password: ");
         scanf("%s", &cPassword);
         fflush(stdin);
         iStatus = authentificationStatus(cNickname, cPassword);
         i++;
-    } while( iStatus==0 || iStatus==1 || i<5);
+    } while( iStatus!=2 && i<5);
     return iStatus;
 }
 
@@ -48,8 +48,6 @@ int authentificationStatus( char cNickname[20], char cPassword[28] )
     if( username ) {
 		 num_fields = mysql_num_rows(username);
 		 if(num_fields == 0) {
-			 printf("1");
-			 getchar();
             mysql_free_result(username);
             MySQLClose (Connection);
             return 0;
