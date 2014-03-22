@@ -35,7 +35,7 @@
 	 <ClCompile Include="database_connection.c">
 		<Filter>Ressourcendateien</Filter>
 	 </ClCompile>
-	 <ClCompile Include="Login.c">
+	 <ClCompile Include="login.c">
 		<Filter>Ressourcendateien</Filter>
 	 </ClCompile>
 	 <ClCompile Include="main.c">

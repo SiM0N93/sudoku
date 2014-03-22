@@ -19,7 +19,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="database_connection.c" />
-    <ClCompile Include="Login.c" />
+    <ClCompile Include="login.c" />
     <ClCompile Include="main.c" />
     <ClCompile Include="register.c" />
     <ClCompile Include="util.c" />
