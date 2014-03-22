@@ -20,7 +20,7 @@ USE `sudoku`;
 -- Tabellenstruktur für Tabelle `accounts`
 --
 
-CREATE TABLE IF NOT EXISTS `useraccounts` (
+CREATE TABLE IF NOT EXISTS `accounts` (
   `id` smallint(4) unsigned NOT NULL AUTO_INCREMENT,
   `first_name` varchar(25) COLLATE utf8_unicode_ci NOT NULL,
   `last_name` varchar(25) COLLATE utf8_unicode_ci NOT NULL,
