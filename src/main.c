@@ -1,3 +1,5 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+
 #include "util.h"
 #include "register.h"
 #include "login.h"
@@ -18,7 +20,7 @@ int main(void)
 	{
 		printf("M E N U E\n");
 		printf("= = = = =");
-		printf("\n1. Register\n2.Login\n3.Exit\n\nInput: ");
+		printf("\n1. Register\n2. Login\n3. Exit\n\nInput: ");
 		iSuccessEingabe = scanf("%i", &iEingabe );
 		fflush(stdin);
 		if( iEingabe == 1 ) {

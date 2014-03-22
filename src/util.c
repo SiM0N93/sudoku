@@ -21,6 +21,11 @@ int getArraySizeForChar( char *Array ) {
 	int Size = sizeof(Array) / sizeof(char);
    return Size-1;
 }
+int getRowCountSize( MYSQL_ROW ROW ) {
+	int Size = sizeof(ROW) / sizeof(char);
+   return Size-1;
+}
+
 int getArraySizeForInt( int *Array ) {
 	int Size = sizeof(Array) / sizeof(int);
    return Size;

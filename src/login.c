@@ -103,29 +103,16 @@ ACCOUNT getUser(char cNickname[20], char cPassword[28])
 		ROW = mysql_fetch_row( userEntity );
 		if( ROW )
 		{
-			num_fields = mysql_num_fields(userEntity);
-			for( i=0; i<num_fields; i++ )
+			arraysize = getRowCountSize(ROW);
+			if( arraysize == 3 )
 			{
-				if( ROW[i] )
-				{
-					
-					if(0==i)
-					{
-						strcpy(user.FirstName, ROW[0]);
-					}
-					else if(1==i)
-					{
-						strcpy(user.LastName, ROW[1]);
-					}
-					else if(2==i)
-					{
-						strcpy(user.UserName, ROW[2]);
-					}
-				}
+					strcpy(user.FirstName, ROW[0]);
+					strcpy(user.LastName, ROW[1]);
+					strcpy(user.UserName, ROW[2]);
+			} else {
+				DEBUG_Log("Database didnt select [3] rows.");
 			}
 		}
-	} else {
-		DEBUG_Log("The user does not exsist in the database");
 	}
 	mysql_free_result(userEntity);
 	MySQLClose (Connection);
