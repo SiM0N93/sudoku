@@ -17,9 +17,9 @@ int getArraySizeForInt( int *Array );
 
 typedef struct account
 {
-   char FirstName[25];
-   char LastName[25];
-   char UserName[20];
+    char FirstName[25];
+    char LastName[25];
+    char UserName[20];
 } ACCOUNT;
 
 #endif // UTIL_H

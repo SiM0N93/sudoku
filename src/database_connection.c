@@ -5,10 +5,10 @@
 
 MYSQL_RES *QueryBuilder( MYSQL* Connection, char* cQuery )
 {
-	 char* Error="";
+    char* Error="";
     if( mysql_query( Connection, cQuery ) )
     {
-		  strcpy( Error, mysql_error( Connection ) );
+        strcpy( Error, mysql_error( Connection ) );
         DEBUG_Log( Error );
         return 0;
     }
@@ -17,22 +17,22 @@ MYSQL_RES *QueryBuilder( MYSQL* Connection, char* cQuery )
 
 MYSQL* MySQLConnect(void)
 {
-	 char* Error="";
+    char* Error="";
     MYSQL *Connection = NULL;
 
     if( !( Connection = mysql_init( NULL ) ) )
     {
-            strcpy( Error, mysql_error( Connection ) );
-				DEBUG_Log( Error );
-            return NULL;
+        strcpy( Error, mysql_error( Connection ) );
+        DEBUG_Log( Error );
+        return NULL;
     }
 
     if( !( mysql_real_connect( Connection, DB_HOST, DB_USER, DB_PASSWORD,
                                DB_DATABASE, DB_PORT, NULL, 0 ) ) )
     {
-            strcpy( Error, mysql_error( Connection ) );
-				DEBUG_Log( Error );
-            return Connection;
+        strcpy( Error, mysql_error( Connection ) );
+        DEBUG_Log( Error );
+        return Connection;
     }
     return Connection;
 }
