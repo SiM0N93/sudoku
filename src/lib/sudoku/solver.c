@@ -17,19 +17,19 @@ int iSudokuAnzahlLoesungen = 0;
 int iSudokuLoesungen[SUDOKU_MAX_LOESUNGEN][SUDOKU_GROESSE][SUDOKU_GROESSE];
 
 int _sudokuCheckForNumber(int iColumn, int iRow, int iValue,
-                          int *iSudoku[SUDOKU_GROESSE][SUDOKU_GROESSE])
+                          int iSudoku[SUDOKU_GROESSE][SUDOKU_GROESSE])
 {
    int iResult = 0;
 
-   if (_sudokuCheckRowForValue(iRow, iValue, &iSudoku))
+   if (_sudokuCheckRowForValue(iRow, iValue, iSudoku))
    {
       iResult = 1;
    }
-   else if (_sudokuCheckColumnForValue(iColumn, iValue, &iSudoku))
+   else if (_sudokuCheckColumnForValue(iColumn, iValue, iSudoku))
    {
       iResult = 1;
    }
-   else if (_sudokuCheckFieldForValue(iColumn, iRow, iValue, &iSudoku))
+   else if (_sudokuCheckFieldForValue(iColumn, iRow, iValue, iSudoku))
    {
       iResult = 1;
    }
@@ -38,7 +38,7 @@ int _sudokuCheckForNumber(int iColumn, int iRow, int iValue,
 }
 
 int _sudokuCheckRowForValue(int iRow, int iValue,
-                            int *iSudoku[SUDOKU_GROESSE][SUDOKU_GROESSE])
+                            int iSudoku[SUDOKU_GROESSE][SUDOKU_GROESSE])
 {
    int i, iResult = 0;
 
@@ -52,7 +52,7 @@ int _sudokuCheckRowForValue(int iRow, int iValue,
 }
 
 int _sudokuCheckColumnForValue(int iColumn, int iValue,
-                               int *iSudoku[SUDOKU_GROESSE][SUDOKU_GROESSE])
+                               int iSudoku[SUDOKU_GROESSE][SUDOKU_GROESSE])
 {
    int i, iResult = 0;
 
@@ -68,7 +68,7 @@ int _sudokuCheckColumnForValue(int iColumn, int iValue,
 }
 
 int _sudokuCheckFieldForValue(int iColumn, int iRow, int iValue,
-                              int *iSudoku[SUDOKU_GROESSE][SUDOKU_GROESSE])
+                              int iSudoku[SUDOKU_GROESSE][SUDOKU_GROESSE])
 {
    int iCornerX, iCornerY, i, j;
 
@@ -93,13 +93,13 @@ int _sudokuCheckFieldForValue(int iColumn, int iRow, int iValue,
    return iResult;
 }
 
-int sudokuSolve(int *iSudoku[SUDOKU_GROESSE][SUDOKU_GROESSE])
+int sudokuSolve(int iSudoku[SUDOKU_GROESSE][SUDOKU_GROESSE])
 {
-   return _sudokuSolveWithIndex(0, 0, &iSudoku);
+   return _sudokuSolveWithIndex(0, 0, iSudoku);
 }
 
 int _sudokuSolveWithIndex(int iColumn, int iRow,
-                          int *iSudoku[SUDOKU_GROESSE][SUDOKU_GROESSE])
+                          int iSudoku[SUDOKU_GROESSE][SUDOKU_GROESSE])
 {
    int i;
    if (iColumn >= SUDOKU_GROESSE)
@@ -115,20 +115,20 @@ int _sudokuSolveWithIndex(int iColumn, int iRow,
 
    if (iSudoku[iRow][iColumn] > 0)
    {
-      return _sudokuSolveWithIndex(iColumn + 1, iRow, &iSudoku);
+      return _sudokuSolveWithIndex(iColumn + 1, iRow, iSudoku);
    }
 
    for (i = 1; i <= SUDOKU_GROESSE; i++)
    {
-      if (_sudokuCheckForNumber(iColumn, iRow, i, &iSudoku) != 1) {
+      if (_sudokuCheckForNumber(iColumn, iRow, i, iSudoku) != 1) {
          iSudoku[iRow][iColumn] = i;
 
-         if (_sudokuSolveWithIndex(iColumn + 1, iRow, &iSudoku))
+         if (_sudokuSolveWithIndex(iColumn + 1, iRow, iSudoku) &&
+             iSudokuAnzahlLoesungen < SUDOKU_MAX_LOESUNGEN)
          {
             _sudokuDebugPrint(iSudoku);
-            _sudokuCopy(iSudokuAnzahlLoesungen, &iSudoku);
+            _sudokuCopy(iSudokuAnzahlLoesungen, iSudoku);
             iSudokuAnzahlLoesungen++;
-            //return 1;
          }
       }
    }
@@ -148,7 +148,7 @@ void _sudokuDebugPrint(int iSudoku[SUDOKU_GROESSE][SUDOKU_GROESSE]) {
    printf("\n");
 }
 
-void _sudokuCopy(int iIndex, int *iSudoku[SUDOKU_GROESSE][SUDOKU_GROESSE])
+void _sudokuCopy(int iIndex, int iSudoku[SUDOKU_GROESSE][SUDOKU_GROESSE])
 {
    int i, j;
    for (i = 0; i < SUDOKU_GROESSE; i++)
