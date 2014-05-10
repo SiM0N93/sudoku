@@ -1,6 +1,5 @@
 #include "util.h"
 #include "control.h"
-#include <conio.h>
 
 /*
 *  Funktionsname:  control

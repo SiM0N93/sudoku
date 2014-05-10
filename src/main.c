@@ -3,6 +3,7 @@
 #include "util.h"
 #include "register.h"
 #include "login.h"
+#include "toplist.h"
 
 /* ============================================================================
 * Funktion:        main
@@ -15,7 +16,7 @@
 int main(void)
 {
    int iStatus = 0, iTemp = 1, iLength = 0;
-   char cAuswahl, *cMenu[3] = { "Register", "Login", "Exit"};
+   char cAuswahl, *cMenu[5] = { "Register", "Login", "Bestenliste", "Exit"};
    ACCOUNT user;
 
    iLength = getArraySizeForChar(*cMenu);
@@ -26,7 +27,7 @@ int main(void)
    printf("\t\tM E N U E\n");
    printf("\t= = = = = = = = = = = = =\n\n");
 
-   for (int i = 0; i < iLength; i++)
+   for (int i = 0; i <= iLength; i++)
    {
       if (i == iTemp-1)
       {
@@ -49,14 +50,16 @@ int main(void)
    }
    else if (iStatus == 3) 
    {
-      if (iTemp < 3 && iTemp > 0)
+      if (iTemp < iLength+1 && iTemp > 0)
       {
          iTemp++;
       }
    }
 
    } while (iStatus != 6);
+
    system("cls");
+
    if(iTemp == 1) 
    {
       registrierung();
@@ -73,7 +76,12 @@ int main(void)
    }
    if (iTemp == 3)
    {
-
+      toplist();
+      system("cls");
+   }
+   if (iTemp == 4)
+   {
+      
    }
         
     return 0;
