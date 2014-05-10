@@ -15,4 +15,4 @@ MYSQL_RES *QueryBuilder( MYSQL* Connection, char* cQuery );
 MYSQL* MySQLConnect(void);
 void MySQLClose(MYSQL* Connection);
 
-#endif // DATABASE_CONNECTION_H
+#endif /* DATABASE_CONNECTION_H */

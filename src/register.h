@@ -4,4 +4,4 @@
 /* Prototypen */
 void registrierung(void);
 
-#endif // REGISTER_H
+#endif /* REGISTER_H */

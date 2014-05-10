@@ -18,9 +18,9 @@ int main(void)
     ACCOUNT user;
     do
     {
-        printf("M E N U E\n");
-        printf("= = = = =");
-        printf("\n1. Register\n2. Login\n3. Exit\n\nInput: ");
+        printf("\t\tM E N U E\n");
+        printf("\t\t= = = = =\n");
+        printf("\n\t\t1. Register\n\t\t2. Login\n\t\t3. Exit\n\nInput: ");
         iSuccessEingabe = scanf("%i", &iEingabe );
         fflush(stdin);
         if( iEingabe == 1 ) {
@@ -29,7 +29,8 @@ int main(void)
         }
     } while( iSuccessEingabe == 0 || iEingabe < 1 || iEingabe > 3 );
 
-    if( iEingabe == 2 ) {
+    if( iEingabe == 2 ) 
+    {
         user = login();
         system("cls");
         if( user.FirstName=="" )
@@ -37,8 +38,10 @@ int main(void)
         else
             printf("Successfully logged in.\nWelcome %s!\n\n\n", user.UserName);
     }
-    if(iEingabe != 3 )
-        getchar();
-
+   if (iEingabe != 3)
+   {
+      getchar();
+   }
+        
     return 0;
 }
