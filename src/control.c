@@ -10,22 +10,24 @@
 *  Beschreibung:  Prüft ob Eingabe bzw. Taste die gedrückt wurde eine Zahl oder eine Pfeiltaste ist.
 *                 Bei Pfeiltasten wird jeweils ein anderer Zahlenwert zurückgegeben. Für eine Zahl nur einer. 
 */
-void control() {
-	char cAuswahl;
+int control(char cAuswahl) {
 	int iRueckgabe = -1;
 
 	/* Pfeiltasten abfangen
 	*	iRueckgabe gibt zurück je nach Sonderzeichen zurück.
-	*	LINKS	-	1
-	*	HOCH	-	2
+	*	LINKS	   -	1
+	*	HOCH	   -	2
 	*	RUNTER	-	3
 	*	RECHTS	-	4
 	*
 	*  Zahlen abfangen
 	*	iRueckgabe gibt zurück ob Eingabe eine Zahl ist.
 	*	ZAHL	-	5
+   *
+   *  Enter abfangen
+   *  iRueckgabe gibt zurückt ob Eingabe Enter ist.
+   *  ENTER -  13
 	*/
-   cAuswahl = _getch();
    if (cAuswahl == 77)
    {
       iRueckgabe = 4;
@@ -45,6 +47,10 @@ void control() {
    else if (cAuswahl == 48 || cAuswahl == 49 || cAuswahl == 50 || cAuswahl == 51 || cAuswahl == 52 || cAuswahl == 53 || cAuswahl == 54 || cAuswahl == 55 || cAuswahl == 56 || cAuswahl == 57)
    {
       iRueckgabe = 5;
+   }
+   else if (cAuswahl == 13)
+   {
+      iRueckgabe = 6;
    }
 	return iRueckgabe;
 }
