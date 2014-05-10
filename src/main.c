@@ -3,6 +3,7 @@
 #include "util.h"
 #include "register.h"
 #include "login.h"
+#include "toplist.h"
 
 /* ============================================================================
 * Funktion:        main
@@ -14,31 +15,74 @@
 */
 int main(void)
 {
-    int status=0, iEingabe=0, iSuccessEingabe=0;
-    ACCOUNT user;
-    do
-    {
-        printf("M E N U E\n");
-        printf("= = = = =");
-        printf("\n1. Register\n2. Login\n3. Exit\n\nInput: ");
-        iSuccessEingabe = scanf("%i", &iEingabe );
-        fflush(stdin);
-        if( iEingabe == 1 ) {
-            registrierung();
-            system("cls");
-        }
-    } while( iSuccessEingabe == 0 || iEingabe < 1 || iEingabe > 3 );
+   int iStatus = 0, iTemp = 1, iLength = 0;
+   char cAuswahl, *cMenu[5] = { "Register", "Login", "Bestenliste", "Exit"};
+   ACCOUNT user;
 
-    if( iEingabe == 2 ) {
-        user = login();
-        system("cls");
-        if( user.FirstName=="" )
-            printf("Error. Couldnt log in.\n\n\n\n");
-        else
-            printf("Successfully logged in.\nWelcome %s!\n\n\n", user.UserName);
-    }
-    if(iEingabe != 3 )
-        getchar();
+   iLength = getArraySizeForChar(*cMenu);
 
+   do
+   {
+   system("cls");
+   printf("\t\tM E N U E\n");
+   printf("\t= = = = = = = = = = = = =\n\n");
+
+   for (int i = 0; i <= iLength; i++)
+   {
+      if (i == iTemp-1)
+      {
+         printf("\t%c\t%s\n", 16, cMenu[i]);
+      }
+      else
+      {
+         printf("\t\t%s\n", cMenu[i]);
+      }
+   }
+   cAuswahl = _getch();
+   iStatus = control(cAuswahl);
+
+   if (iStatus == 2) 
+   {
+      if (iTemp > 1) 
+      {
+         iTemp--;
+      }
+   }
+   else if (iStatus == 3) 
+   {
+      if (iTemp < iLength+1 && iTemp > 0)
+      {
+         iTemp++;
+      }
+   }
+
+   } while (iStatus != 6);
+
+   system("cls");
+
+   if(iTemp == 1) 
+   {
+      registrierung();
+      system("cls");
+   }
+   if(iTemp == 2) 
+   {
+      user = login();
+      system("cls");
+      if( user.FirstName=="" )
+         printf("Error. Couldnt log in.\n\n\n\n");
+      else
+         printf("Successfully logged in.\nWelcome %s!\n\n\n", user.UserName);
+   }
+   if (iTemp == 3)
+   {
+      toplist();
+      system("cls");
+   }
+   if (iTemp == 4)
+   {
+      
+   }
+        
     return 0;
 }

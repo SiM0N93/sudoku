@@ -3,4 +3,4 @@
 
 void gotoxy(int x, int y);
 
-#endif // PRINTING_H
+#endif /* PRINTING_H */

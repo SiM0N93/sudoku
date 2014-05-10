@@ -1,3 +1,12 @@
+-- phpMyAdmin SQL Dump
+-- version 4.1.12
+-- http://www.phpmyadmin.net
+--
+-- Host: 127.0.0.1
+-- Erstellungszeit: 10. Mai 2014 um 12:36
+-- Server Version: 5.6.16
+-- PHP-Version: 5.5.11
+
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
@@ -10,8 +19,6 @@ SET time_zone = "+00:00";
 --
 -- Datenbank: `sudoku`
 --
-CREATE DATABASE IF NOT EXISTS `sudoku` DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
-USE `sudoku`;
 
 -- --------------------------------------------------------
 
@@ -26,14 +33,41 @@ CREATE TABLE IF NOT EXISTS `accounts` (
   `username` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
   `password` varchar(40) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=2 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=3 ;
 
 --
 -- Daten für Tabelle `accounts`
 --
 
 INSERT INTO `accounts` (`id`, `first_name`, `last_name`, `username`, `password`) VALUES
-(1, 'Michael', 'Schneider', 'ms', '098f6bcd4621d373cade4e832627b4f6');
+(1, 'Michael', 'Schneider', 'ms', '098f6bcd4621d373cade4e832627b4f6'),
+(2, 'Dario', 'Tilgner', 'dario', '827ccb0eea8a706c4c34a16891f84e7b');
+
+-- --------------------------------------------------------
+
+--
+-- Tabellenstruktur für Tabelle `points`
+--
+
+CREATE TABLE IF NOT EXISTS `points` (
+  `id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
+  `userid` mediumint(8) unsigned NOT NULL,
+  `points` mediumint(8) unsigned NOT NULL,
+  `time` smallint(5) unsigned NOT NULL,
+  `difficulty` tinyint(3) unsigned DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `userid` (`userid`,`points`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=5 ;
+
+--
+-- Daten für Tabelle `points`
+--
+
+INSERT INTO `points` (`id`, `userid`, `points`, `time`, `difficulty`) VALUES
+(1, 2, 300, 50, NULL),
+(2, 1, 500, 100, NULL),
+(3, 2, 1000, 150, NULL),
+(4, 1, 1337, 42, NULL);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
