@@ -4,9 +4,7 @@
 // Laenge von Zeilen & Spalten
 #define SUDOKU_GROESSE 9
 #define SUDOKU_FIELD_COUNT_PER_ROW 3
-#define SUDOKU_MAX_LOESUNGEN 5
-
-//extern int iTest[SUDOKU_GROESSE][SUDOKU_GROESSE];
+#define SUDOKU_MAX_LOESUNGEN 100
 
 extern int iSudokuAnzahlLoesungen;
 extern int iSudokuLoesungen[SUDOKU_MAX_LOESUNGEN]
