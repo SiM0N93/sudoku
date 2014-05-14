@@ -15,6 +15,12 @@
 	 </Filter>
   </ItemGroup>
   <ItemGroup>
+	 <ClInclude Include="control.h">
+		<Filter>Headerdateien</Filter>
+	 </ClInclude>
+	 <ClInclude Include="toplist.h">
+		<Filter>Headerdateien</Filter>
+	 </ClInclude>
 	 <ClInclude Include="database_connection.h">
 		<Filter>Headerdateien</Filter>
 	 </ClInclude>
@@ -32,6 +38,12 @@
 	 </ClInclude>
   </ItemGroup>
   <ItemGroup>
+	 <ClCompile Include="control.c">
+		<Filter>Ressourcendateien</Filter>
+	 </ClCompile>
+	 <ClCompile Include="toplist.c">
+		<Filter>Ressourcendateien</Filter>
+	 </ClCompile>
 	 <ClCompile Include="database_connection.c">
 		<Filter>Ressourcendateien</Filter>
 	 </ClCompile>

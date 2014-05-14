@@ -11,6 +11,8 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="control.h" />
+    <ClInclude Include="toplist.h" />
     <ClInclude Include="database_connection.h" />
     <ClInclude Include="login.h" />
     <ClInclude Include="register.h" />
@@ -18,6 +20,8 @@
     <ClInclude Include="included/printing.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="control.c" />
+    <ClCompile Include="toplist.c" />
     <ClCompile Include="database_connection.c" />
     <ClCompile Include="login.c" />
     <ClCompile Include="main.c" />
