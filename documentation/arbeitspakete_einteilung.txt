@@ -5,8 +5,8 @@ Arbeitseinteilung:
 - Sudoku Feld UI					    Houben
 - Dokumentation               Houben
 - Bestenliste						      Tilgner
-- Hilfe Seite/Impressum			  Timmermann
-- How-To-Play Guide           Timmermann
+- Hilfe Seite/Impressum			  Zimmermann
+- How-To-Play Guide           Zimmermann
 - Profile View						    Tilgner/Schneider
 
 * Logik:
