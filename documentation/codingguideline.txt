@@ -1,0 +1,14 @@
+################ CODING GUIDELINE (Heilige Gebote) ################
+===================================================================
+1. Du sollst keine andere IDE neben Visual Studio nutzen!
+2. Überschreite niemals die Grenze von 80 Zeichen in einer Zeile!
+3. Geschweifte Klammern sind unter dem Funktionskopf zu verwenden!
+4. MySQL ist vor dem Kompilieren zu starten!
+5. Ein Tab besteht aus 3 Leerzeichen!
+6. Funktionen erwarten Kommentare darüber
+(Name, Input, Output, Beschreibung) und innerhalb!
+7. Headerdateien sind deine Freunde!
+8. Vorhandene Funktionen dürfen verwendet und nicht jedes Mal
+neu erfunden werden!
+9. Programmiere keine Scheiße!
+10. Hawkings ist der einzig wahre 1337-5K1ll0R hier!
