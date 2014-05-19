@@ -6,7 +6,7 @@
 #define SUDOKU_FIELD_COUNT_PER_ROW 3
 
 /* Maximale Anzahl generierter Loesungsvarianten */
-#define SUDOKU_MAX_LOESUNGEN 100
+#define SUDOKU_MAX_LOESUNGEN 20
 
 /* Deklaration globaler Variablen */
 extern int iSudokuAnzahlLoesungen;
@@ -26,6 +26,7 @@ void _sudokuDebugPrint(int iSudoku[SUDOKU_GROESSE][SUDOKU_GROESSE]);
 
 /* Hauptfuntkion */
 int sudokuSolve(int iSudoku[SUDOKU_GROESSE][SUDOKU_GROESSE]);
+int sudokuIsSolveable(int iSudoku[SUDOKU_GROESSE][SUDOKU_GROESSE]);
 
 /* interne Funktionen */
 int _sudokuCheckRowForValue(int iRow, int iValue,

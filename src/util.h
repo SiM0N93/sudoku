@@ -7,6 +7,7 @@
 #include "included/printing.h"
 #include "database_connection.h"
 #include "lib/sudoku/solver.h"
+#include "lib/sudoku/generator.h"
 #include "control.h"
 
 /* DEBUG: 0 - Keine Meldungen 1 - Debugmeldungen*/
