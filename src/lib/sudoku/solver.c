@@ -12,6 +12,15 @@
 #include "solver.h"
 #include "../../util.h"
 
+/*
+ * ============================================================================
+ * Globale Variablen
+ * ============================================================================
+ */
+int iSudokuAnzahlLoesungen = 0;
+int iSudokuLoesungen[SUDOKU_MAX_LOESUNGEN][SUDOKU_GROESSE][SUDOKU_GROESSE];
+
+
 
 /* ============================================================================
  * Funktion:        _sudokuCheckForNumber
