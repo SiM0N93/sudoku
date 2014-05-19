@@ -21,23 +21,23 @@ extern int iSudokuLoesungen[SUDOKU_MAX_LOESUNGEN]
  */
 
 /* Hilfsfunktionen */
-void _sudokuCopy(int iIndex, int *iSudoku[SUDOKU_GROESSE][SUDOKU_GROESSE]);
-void _sudokuDebugPrint(int *iSudoku[SUDOKU_GROESSE][SUDOKU_GROESSE]);
+void _sudokuCopy(int iIndex, int iSudoku[SUDOKU_GROESSE][SUDOKU_GROESSE]);
+void _sudokuDebugPrint(int iSudoku[SUDOKU_GROESSE][SUDOKU_GROESSE]);
 
 /* Hauptfuntkion */
-int sudokuSolve(int *iSudoku[SUDOKU_GROESSE][SUDOKU_GROESSE]);
+int sudokuSolve(int iSudoku[SUDOKU_GROESSE][SUDOKU_GROESSE]);
 
 /* interne Funktionen */
 int _sudokuCheckRowForValue(int iRow, int iValue,
-                            int *iSudoku[SUDOKU_GROESSE][SUDOKU_GROESSE]);
+                            int iSudoku[SUDOKU_GROESSE][SUDOKU_GROESSE]);
 int _sudokuCheckForNumber(int iColumn, int iRow, int iValue,
-                          int *iSudoku[SUDOKU_GROESSE][SUDOKU_GROESSE]);
+                          int iSudoku[SUDOKU_GROESSE][SUDOKU_GROESSE]);
 int _sudokuCheckFieldForValue(int iColumn, int iRow, int iValue,
-                              int *iSudoku[SUDOKU_GROESSE][SUDOKU_GROESSE]);
+                              int iSudoku[SUDOKU_GROESSE][SUDOKU_GROESSE]);
 int _sudokuCheckColumnForValue(int iColumn, int iValue,
-                               int *iSudoku[SUDOKU_GROESSE][SUDOKU_GROESSE]);
+                               int iSudoku[SUDOKU_GROESSE][SUDOKU_GROESSE]);
 int _sudokuSolveWithIndex(int iColumn, int iRow,
-                          int *iSudoku[SUDOKU_GROESSE][SUDOKU_GROESSE]);
+                          int iSudoku[SUDOKU_GROESSE][SUDOKU_GROESSE]);
 
 
 
