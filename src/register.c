@@ -28,7 +28,7 @@
 void registrierung(void)
 {
     MYSQL_RES *result = NULL;
-    char cVorname[25], cNachname[25], cNickname[20], cPasswort[28], cQuery[300];
+    char cVorname[25], cNachname[25], cNickname[20], cPasswort[28], cQuery[300], c;
     MYSQL *Connection = MySQLConnect ();
 
     /* Ausgabe fuer Registrierungsinfos */
@@ -49,7 +49,19 @@ void registrierung(void)
     scanf("%s", &cNickname);
     fflush(stdin);
     printf("\nPassword: ");
-    scanf("%s", &cPasswort);
+    for(c=0;c<28;)
+	 {
+	 	cPasswort[c] = _getch();
+		if(cPasswort[c] != 13 && cPasswort[c] != 8)
+		{
+			putchar('*');
+		}
+		else
+		{
+			c++;
+		}
+	 }
+	 cPasswort[28] = c;
     fflush(stdin);
 
     /* Query festlegen */

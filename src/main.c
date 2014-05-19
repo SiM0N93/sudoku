@@ -1,4 +1,4 @@
-#define _CRT_SECURE_NO_WARNINGS 1
+﻿#define _CRT_SECURE_NO_WARNINGS 1
 
 #include "util.h"
 #include "register.h"
@@ -15,7 +15,7 @@
 */
 int main(void)
 {
-   int iStatus = 0, iTemp = 1, iLength = 0;
+   int iStatus = 0, iTemp = 1, iLength = 0, i;
    char cAuswahl, *cMenu[5] = { "Register", "Login", "Bestenliste", "Exit"};
    ACCOUNT user;
 
@@ -27,7 +27,7 @@ int main(void)
    printf("\t\tM E N U E\n");
    printf("\t= = = = = = = = = = = = =\n\n");
 
-   for (int i = 0; i <= iLength; i++)
+   for (i = 0; i <= iLength; i++)
    {
       if (i == iTemp-1)
       {

@@ -19,7 +19,7 @@ void toplist()
    {
       num_fields = mysql_num_fields(topList);
 
-      printf("\n\n\n\t\tPlatzierung\tUsername\tPunkte\t\tZeit");
+      printf("\n\n\n\t\tRank\tUsername\tScore\t\tTime");
       while (ROW = mysql_fetch_row(topList))
       {
          printf("\n\t\t%5.i\t\t%s\t\t%s\t\t%s", i, ROW[0], ROW[1], ROW[2]);
@@ -29,7 +29,7 @@ void toplist()
    mysql_free_result(topList);
    MySQLClose(Connection);
 
-   printf("\n\n\nUm ins Menue zurueckzukommen bitte Enter druecken!");
+   printf("\n\n\nPress RETURN to leave the toplist and enter the main menue!");
    do
    {
       cAuswahl = _getch();

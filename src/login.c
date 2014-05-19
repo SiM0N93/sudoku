@@ -5,7 +5,7 @@
 ACCOUNT login(void)
 {
     int iStatus=0, i=0;
-    char cNickname[20], cPassword[28];
+    char cNickname[20], cPassword[28], c;
     ACCOUNT userAccount;
 
     do
@@ -25,8 +25,19 @@ ACCOUNT login(void)
         printf("Username: ");
         scanf("%s", &cNickname);
         fflush(stdin);
-        printf("Password: ");
-        scanf("%s", &cPassword);
+		  printf("\nPassword: ");
+		  for(c=0;c<28;)
+		  {
+				cPassword[c] = _getch();
+			   if(cPassword[c] != 13 && cPassword[c] != 8)
+				{
+				  putchar('*');
+			   }
+				else
+				{
+					c++;
+				}
+		  }
         fflush(stdin);
         iStatus = authentificationStatus(cNickname, cPassword);
         i++;

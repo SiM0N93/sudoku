@@ -2,15 +2,15 @@
 #include "control.h"
 
 /*
-*  Funktionsname:  control
-*  Input:             -
+*  Funktionsname:	control
+*  Input:         -
 *  Output:        int iRueckgabe
 *
 *  Beschreibung:  Prüft ob Eingabe bzw. Taste die gedrückt wurde eine Zahl oder eine Pfeiltaste ist.
 *                 Bei Pfeiltasten wird jeweils ein anderer Zahlenwert zurückgegeben. Für eine Zahl nur einer. 
 */
 int control(char cAuswahl) {
-	int iRueckgabe = -1;
+	int iRueckgabe = 0;
 
 	/* Pfeiltasten abfangen
 	*	iRueckgabe gibt zurück je nach Sonderzeichen zurück.
@@ -43,7 +43,17 @@ int control(char cAuswahl) {
    {
       iRueckgabe = 2;
    }
-   else if (cAuswahl == 48 || cAuswahl == 49 || cAuswahl == 50 || cAuswahl == 51 || cAuswahl == 52 || cAuswahl == 53 || cAuswahl == 54 || cAuswahl == 55 || cAuswahl == 56 || cAuswahl == 57)
+   else if (cAuswahl == 48 || 
+				cAuswahl == 49 || 
+				cAuswahl == 50 || 
+				cAuswahl == 51 || 
+				cAuswahl == 52 || 
+				cAuswahl == 53 || 
+				cAuswahl == 54 || 
+				cAuswahl == 55 || 
+				cAuswahl == 56 || 
+				cAuswahl == 57
+			  )
    {
       iRueckgabe = 5;
    }
