@@ -92,7 +92,7 @@ int _sudokuCheckRowForValue(int iRow, int iValue,
       {
          iResult = 1;
       }
-         
+
    }
 
    return iResult;
@@ -182,7 +182,7 @@ int _sudokuCheckFieldForValue(int iColumn, int iRow, int iValue,
 
 /* ============================================================================
  * Funktion:        sudokuSolve
- * Beschreibung:    Befuellt iSudokuAnzahlLoesungen und iSudokuLoesungen mit 
+ * Beschreibung:    Befuellt iSudokuAnzahlLoesungen und iSudokuLoesungen mit
  *                  geloesten Sudokus des Parameters iSudoku.
  *
  *
@@ -206,12 +206,41 @@ int _sudokuCheckFieldForValue(int iColumn, int iRow, int iValue,
  */
 int sudokuSolve(int iSudoku[SUDOKU_GROESSE][SUDOKU_GROESSE])
 {
-   return _sudokuSolveWithIndex(0, 0, iSudoku);
+   return _sudokuSolveWithIndex(0, 0, iSudoku, 0);
 }
 
 /* ============================================================================
+ * Funktion:        sudokuIsSolveable
+ * Beschreibung:    Ueberprueft ob ein gegebenes Sudoku loesbar ist.
+ *
+ *
+ * Level:           Oeffentliche Funktion
+ * Autor:           Dormann
+ *
+ * Input:           int[][] iSudoku  Zweidimensionaler Array aus Integern. Die
+ *                                   Ziffer "0" stellt noch leere Felder dar.
+ *                                   Beispiel:
+ *                                     int iTest[SUDOKU_GROESSE][...] = {
+ *                                        { 5, 3, 0, 0, 0, 0, 0, 0, 0 },
+ *                                        { 6, 0, 0, 0, 9, 5, 3, 0, 0 },
+ *                                        ...
+ *                                        { 0, 0, 0, 0, 8, 0, 0, 7, 9 }
+ *                                     };
+ *
+ * Output:          Integer; 1 wenn das Sudoku geloest werden konnte, 0 wenn
+ *                  nicht
+ *
+ * ============================================================================
+ */
+int sudokuIsSolveable(int iSudoku[SUDOKU_GROESSE][SUDOKU_GROESSE])
+{
+   return _sudokuSolveWithIndex(0, 0, iSudoku, 1);
+}
+
+
+/* ============================================================================
  * Funktion:        _sudokuSolveWithIndex
- * Beschreibung:    Rekursive Funktion zur Loesung eines Sudokus. Testet pro 
+ * Beschreibung:    Rekursive Funktion zur Loesung eines Sudokus. Testet pro
  *                  Feld jede Zahl einmal aus und schaut was passt.
  *
  *                  Erzeugt die Funktion ein geloestes Sudoku, so wird die
@@ -222,9 +251,11 @@ int sudokuSolve(int iSudoku[SUDOKU_GROESSE][SUDOKU_GROESSE])
  * Level:           Interne Funktion
  * Autor:           Dormann
  *
- * Input:           int     iColumn    Spaltenindex
- *                  int     iRow       Reihenindex
- *                  int[][] iSudoku    Zu durchsuchendes Sudoku
+ * Input:           int     iColumn        Spaltenindex
+ *                  int     iRow           Reihenindex
+ *                  int[][] iSudoku        Zu durchsuchendes Sudoku
+ *                  int     iSolveOnlyOnce Ziffer 1 wenn das Sudoku nur einmal
+ *                                         geloest werden soll
  *
  * Output:          int iResult
  *                  1 wenn Sudoku geloest
@@ -233,7 +264,8 @@ int sudokuSolve(int iSudoku[SUDOKU_GROESSE][SUDOKU_GROESSE])
  * ============================================================================
  */
 int _sudokuSolveWithIndex(int iColumn, int iRow,
-                          int iSudoku[SUDOKU_GROESSE][SUDOKU_GROESSE])
+                          int iSudoku[SUDOKU_GROESSE][SUDOKU_GROESSE],
+                          int iSolveOnlyOnce)
 {
    int i;
 
@@ -253,7 +285,8 @@ int _sudokuSolveWithIndex(int iColumn, int iRow,
    /* Springe in das naechste Feld wenn das aktuelle nicht leer ist. */
    if (iSudoku[iRow][iColumn] > 0)
    {
-      return _sudokuSolveWithIndex(iColumn + 1, iRow, iSudoku);
+      return _sudokuSolveWithIndex(iColumn + 1, iRow,
+                                   iSudoku, iSolveOnlyOnce);
    }
 
    /* Ziffern 0 - 9 einsetzen und testen, ob dieser Zug moeglich ist. */
@@ -263,16 +296,21 @@ int _sudokuSolveWithIndex(int iColumn, int iRow,
          /* Funktioniert! */
          iSudoku[iRow][iColumn] = i;
 
-         if (_sudokuSolveWithIndex(iColumn + 1, iRow, iSudoku) &&
-             iSudokuAnzahlLoesungen < SUDOKU_MAX_LOESUNGEN)
+         if (_sudokuSolveWithIndex(
+                  iColumn + 1, iRow, iSudoku, iSolveOnlyOnce
+             ) && iSudokuAnzahlLoesungen < SUDOKU_MAX_LOESUNGEN)
          {
             /* Sudoku geloest? Loesungszahl erhoehen und Loesungsvariante
                speichern */
             _sudokuCopy(iSudokuAnzahlLoesungen, iSudoku);
             iSudokuAnzahlLoesungen++;
 
-            /* Angenommen man moechte nur eine Loesungsvariante generieren, so
-              kann an dieser Stelle return 1; eingefuegt werden. */
+            /* Soll das Sudoku nur einmal geloest werden und dieser Punkt
+               wird erreicht, kann die Rekursion aufgeloest werden */
+            if( iSolveOnlyOnce == 1 )
+            {
+               return 1;
+            }
          }
       }
    }
