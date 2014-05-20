@@ -2,7 +2,9 @@
 #define UTIL_H
 
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
+#include <time.h>
 
 #include "included/printing.h"
 #include "included/password.h"
@@ -12,6 +14,8 @@
 
 /* DEBUG: 0 - Keine Meldungen 1 - Debugmeldungen*/
 #define DEBUG 1
+#define SUDOKU_SIZE 9
+#define RAND(max) (int)(((float)rand() / RAND_MAX) * max)
 
 void DEBUG_Log(char *text);
 int getArraySizeForChar( char *Array );

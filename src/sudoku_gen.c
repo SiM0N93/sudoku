@@ -1,5 +1,5 @@
 #include "util.h"
-#include "sudoku.h"
+#include "sudoku_gen.h"
 
 void generateSudoku(int matrix[SUDOKU_SIZE][SUDOKU_SIZE], int difficulty)
 {
@@ -55,7 +55,7 @@ void generateSudoku(int matrix[SUDOKU_SIZE][SUDOKU_SIZE], int difficulty)
     solve(matrix, RAND(25));
 
     /* now remove random elements from the solved puzzle */
-    for (a=0; a<numbersToRemove; a++)
+    for (a=0; a<numbersToReset; a++)
     {
         matrix[RAND(SUDOKU_SIZE)][RAND(SUDOKU_SIZE)] = 0;
     }
