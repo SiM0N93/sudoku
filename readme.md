@@ -1,5 +1,3 @@
 #Sudoku
 
----
 A school project
----
