@@ -20,12 +20,13 @@ int main(void)
    char cAuswahl, *cMenu[5] = { "Register", "Login", "Bestenliste", "Exit"};
    ACCOUNT user;
 
+   system("mode con cols=120 lines=60");
+
    iLength = getArraySizeForChar(*cMenu);
-   createBorder();
+   //createBorder();
    do
    {
    system("cls");
-   system("mode con cols=100 lines=70");
    printf("\t\tM E N U E\n");
    printf("\t= = = = = = = = = = = = =\n\n");
 
