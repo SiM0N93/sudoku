@@ -1,5 +1,5 @@
-#ifndef REGISTER_H
-#define REGISTER_H
+#ifndef SUDOKU_GEN
+#define SUDOKU_GEN
 
 /* Prototypen */
 void generateSudoku(int matrix[SUDOKU_SIZE][SUDOKU_SIZE], int difficulty);
@@ -9,4 +9,4 @@ int solveRecur(int[][SUDOKU_SIZE], int, int *, int *, int *);
 int isFreeNumber(int[][SUDOKU_SIZE], int, int, int);
 
 
-#endif // REGISTER_H
+#endif // SUDOKU_GEN

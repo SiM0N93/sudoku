@@ -4,6 +4,7 @@
 #include "register.h"
 #include "login.h"
 #include "toplist.h"
+#include "sudoku_gen.h"
 
 /* ============================================================================
 * Funktion:        main

@@ -1,3 +1,6 @@
+#include "util.h"
+#include "sudoku.h"
+
 void generateSudoku(int matrix[SUDOKU_SIZE][SUDOKU_SIZE], int difficulty)
 {
     int shuffled[SUDOKU_SIZE], a, b, numbersToReset=0;
