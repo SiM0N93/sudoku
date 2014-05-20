@@ -1,5 +1,5 @@
 - [ ] 20 - 05 - 2014
-  - [ ] Menu Layout
+  - [x] Menu Layout
   - [ ] Bestenliste Layout
   - [ ] Passwort funktionalität (Enter abfang)
   - [ ] Code aufteilung, auslagerung anderer Sprachen
@@ -9,5 +9,6 @@
   
 - [ ] 21 - 05 - 2014
   - [ ] Algorithm generator prüfen
-  - [ ] Menu selection anpassung: (>    Login) => ( >Login< )
+  - [x] Menu selection anpassung: (>    Login) => ( >Login< )
   - [ ] Sudoku field selection
+  - [ ] Bestenliste Einteilung der Schwierigkeitsstufen (Einfach - Mittel - Schwer)
