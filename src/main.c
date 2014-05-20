@@ -20,7 +20,7 @@ int main(void)
    ACCOUNT user;
 
    iLength = getArraySizeForChar(*cMenu);
-
+   createBorder();
    do
    {
    system("cls");
