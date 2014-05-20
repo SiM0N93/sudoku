@@ -18,6 +18,7 @@
     <ClInclude Include="register.h" />
     <ClInclude Include="util.h" />
     <ClInclude Include="included/printing.h" />
+    <ClInclude Include="included/password.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="control.c" />
@@ -28,6 +29,7 @@
     <ClCompile Include="register.c" />
     <ClCompile Include="util.c" />
     <ClCompile Include="included/printing.c" />
+    <ClCompile Include="included/password.c" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{200C628E-5930-4E81-A89F-94E4E7FE50B2}</ProjectGuid>

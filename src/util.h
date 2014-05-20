@@ -5,6 +5,7 @@
 #include <string.h>
 
 #include "included/printing.h"
+#include "included/password.h"
 #include "database_connection.h"
 #include "lib/sudoku/solver.h"
 #include "control.h"

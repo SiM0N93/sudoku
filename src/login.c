@@ -5,7 +5,7 @@
 ACCOUNT login(void)
 {
     int iStatus=0, i=0;
-    char cNickname[20], cPassword[28], c;
+    char cNickname[20], cPassword[28]="", c;
     ACCOUNT userAccount;
 
     do
@@ -17,28 +17,18 @@ ACCOUNT login(void)
             printf("========================================\n");
             printf("==  Error! The user does not exsist.  ==\n");
             printf("========================================\n\n\n");
+				strcpy(cPassword, "");
         } else if( iStatus == 1) {
             printf("=========================\n");
             printf("= Error! Wrong password =\n");
             printf("=========================\n\n\n");
+				strcpy(cPassword, "");
         }
         printf("Username: ");
         scanf("%s", &cNickname);
         fflush(stdin);
 		  printf("\nPassword: ");
-		  for(c=0;c<28;)
-		  {
-				cPassword[c] = _getch();
-			   if(cPassword[c] != 13 && cPassword[c] != 8)
-				{
-				  putchar('*');
-			   }
-				else
-				{
-					c++;
-				}
-		  }
-        fflush(stdin);
+        GetPassword( cPassword );
         iStatus = authentificationStatus(cNickname, cPassword);
         i++;
     } while( iStatus!=2 && i<5);
@@ -48,7 +38,7 @@ ACCOUNT login(void)
     return userAccount;
 }
 
-int authentificationStatus( char cNickname[20], char cPassword[28] )
+int authentificationStatus( char cNickname[], char cPassword[] )
 {
     int num_fields=0,i=0;
     char cQuery[300];
@@ -94,7 +84,7 @@ int authentificationStatus( char cNickname[20], char cPassword[28] )
     return 0;
 }
 
-ACCOUNT getUser(char cNickname[20], char cPassword[28])
+ACCOUNT getUser(char cNickname[], char cPassword[])
 {
     int num_fields=0,i=0, arraysize=0;
     char cQuery[300];

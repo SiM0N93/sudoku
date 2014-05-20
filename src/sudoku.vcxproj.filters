@@ -36,6 +36,9 @@
 	 <ClInclude Include="included/printing.h">
 		<Filter>Headerdateien</Filter>
 	 </ClInclude>
+	 <ClInclude Include="included/password.h">
+		<Filter>Headerdateien</Filter>
+	 </ClInclude>
   </ItemGroup>
   <ItemGroup>
 	 <ClCompile Include="control.c">
@@ -60,6 +63,9 @@
 		<Filter>Ressourcendateien</Filter>
 	 </ClCompile>
 	 <ClCompile Include="included/printing.c">
+		<Filter>Ressourcendateien</Filter>
+	 </ClCompile>
+	 <ClCompile Include="included/password.c">
 		<Filter>Ressourcendateien</Filter>
 	 </ClCompile>
   </ItemGroup>

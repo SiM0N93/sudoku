@@ -3,7 +3,7 @@
 
 /* deklaration der Prototypen */
 ACCOUNT login(void);
-int authentificationStatus( char cNickname[20], char cPassword[28] );
-ACCOUNT getUser( char cNickname[20], char cPassword[28]);
+int authentificationStatus( char cNickname[], char cPassword[] );
+ACCOUNT getUser( char cNickname[], char cPassword[]);
 
 #endif /* LOGIN_H */
