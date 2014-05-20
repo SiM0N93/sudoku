@@ -15,9 +15,6 @@
 	 </Filter>
   </ItemGroup>
   <ItemGroup>
-	 <ClInclude Include="control.h">
-		<Filter>Headerdateien</Filter>
-	 </ClInclude>
 	 <ClInclude Include="toplist.h">
 		<Filter>Headerdateien</Filter>
 	 </ClInclude>
@@ -45,11 +42,11 @@
 	 <ClInclude Include="included/password.h">
 		<Filter>Headerdateien</Filter>
 	 </ClInclude>
+	 <ClInclude Include="included/control.h">
+		<Filter>Headerdateien</Filter>
+	 </ClInclude>
   </ItemGroup>
   <ItemGroup>
-	 <ClCompile Include="control.c">
-		<Filter>Ressourcendateien</Filter>
-	 </ClCompile>
 	 <ClCompile Include="toplist.c">
 		<Filter>Ressourcendateien</Filter>
 	 </ClCompile>
@@ -78,6 +75,9 @@
 		<Filter>Ressourcendateien</Filter>
 	 </ClCompile>
 	 <ClCompile Include="included/password.c">
+		<Filter>Ressourcendateien</Filter>
+	 </ClCompile>
+	 <ClCompile Include="included/control.c">
 		<Filter>Ressourcendateien</Filter>
 	 </ClCompile>
   </ItemGroup>

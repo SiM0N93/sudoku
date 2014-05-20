@@ -11,7 +11,6 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="control.h" />
     <ClInclude Include="toplist.h" />
     <ClInclude Include="database_connection.h" />
     <ClInclude Include="login.h" />
@@ -21,9 +20,9 @@
     <ClInclude Include="sudoku_gen.h" />
     <ClInclude Include="included/printing.h" />
     <ClInclude Include="included/password.h" />
+    <ClInclude Include="included/control.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="control.c" />
     <ClCompile Include="toplist.c" />
     <ClCompile Include="database_connection.c" />
     <ClCompile Include="login.c" />
@@ -34,6 +33,7 @@
     <ClCompile Include="sudoku_gen.c" />
     <ClCompile Include="included/printing.c" />
     <ClCompile Include="included/password.c" />
+    <ClCompile Include="included/control.c" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{200C628E-5930-4E81-A89F-94E4E7FE50B2}</ProjectGuid>
