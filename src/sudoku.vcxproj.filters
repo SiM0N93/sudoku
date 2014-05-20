@@ -36,6 +36,9 @@
 	 <ClInclude Include="layout.h">
 		<Filter>Headerdateien</Filter>
 	 </ClInclude>
+	 <ClInclude Include="sudoku_gen.h">
+		<Filter>Headerdateien</Filter>
+	 </ClInclude>
 	 <ClInclude Include="included/printing.h">
 		<Filter>Headerdateien</Filter>
 	 </ClInclude>
@@ -66,6 +69,9 @@
 		<Filter>Ressourcendateien</Filter>
 	 </ClCompile>
 	 <ClCompile Include="layout.c">
+		<Filter>Ressourcendateien</Filter>
+	 </ClCompile>
+	 <ClCompile Include="sudoku_gen.c">
 		<Filter>Ressourcendateien</Filter>
 	 </ClCompile>
 	 <ClCompile Include="included/printing.c">

@@ -18,6 +18,7 @@
     <ClInclude Include="register.h" />
     <ClInclude Include="util.h" />
     <ClInclude Include="layout.h" />
+    <ClInclude Include="sudoku_gen.h" />
     <ClInclude Include="included/printing.h" />
     <ClInclude Include="included/password.h" />
   </ItemGroup>
@@ -30,6 +31,7 @@
     <ClCompile Include="register.c" />
     <ClCompile Include="util.c" />
     <ClCompile Include="layout.c" />
+    <ClCompile Include="sudoku_gen.c" />
     <ClCompile Include="included/printing.c" />
     <ClCompile Include="included/password.c" />
   </ItemGroup>
