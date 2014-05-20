@@ -24,6 +24,7 @@ int main(void)
    do
    {
    system("cls");
+   //system("mode con cols=100 lines=70");
    printf("\t\tM E N U E\n");
    printf("\t= = = = = = = = = = = = =\n\n");
 
