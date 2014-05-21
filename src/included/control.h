@@ -2,6 +2,6 @@
 #define CONTROL_H
 
 /* Prototyp für Funktion control */
-int control(char cAuswahl);
+int control(void);
 
 #endif /* CONTROL_H */

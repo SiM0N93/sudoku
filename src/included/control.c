@@ -9,9 +9,9 @@
 *  Beschreibung:  Prüft ob Eingabe bzw. Taste die gedrückt wurde eine Zahl oder eine Pfeiltaste ist.
 *                 Bei Pfeiltasten wird jeweils ein anderer Zahlenwert zurückgegeben. Für eine Zahl nur einer. 
 */
-int control(char cAuswahl) {
+int control(void) {
 	int iRueckgabe = 0;
-
+	char cAuswahl = _getch( );
 	/* Pfeiltasten abfangen
 	*	iRueckgabe gibt zurück je nach Sonderzeichen zurück.
 	*	LINKS	   -	1

@@ -5,7 +5,7 @@
 ACCOUNT login(void)
 {
     int iStatus=0, i=0;
-    char cNickname[20], cPassword[28]="", c;
+    char cNickname[20], cPassword[28]="", c=' ';
     ACCOUNT userAccount;
 
     do
