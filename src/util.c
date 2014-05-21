@@ -30,3 +30,14 @@ int getArraySizeForInt( int *Array ) {
     int Size = sizeof(Array) / sizeof(int);
     return Size;
 }
+
+void resizeWindow(int width, int height ) {
+	char mode[50];
+	sprintf(mode, "mode con cols=%i lines=%i", width, height);
+	system(mode);
+}
+
+int UTIL_ToInt( char input ) {
+	int a = input - '0';
+	return a;
+}

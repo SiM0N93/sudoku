@@ -54,11 +54,13 @@ void registrierung(void)
     /* Query festlegen */
     sprintf(
         cQuery,
-        "INSERT INTO accounts VALUES (NULL, '%s', '%s', '%s', MD5('%s'))",
+        "INSERT INTO accounts VALUES (NULL, '%s', '%s', '%s', MD5('%s'), %i, %i)",
         cVorname,
         cNachname,
         cNickname,
-        cPasswort
+        cPasswort,
+		  WINDOW_WIDTH,
+		  WINDOW_HEIGHT
     );
 
     /* SQL Anfrage schicken */
@@ -69,7 +71,7 @@ void registrierung(void)
 
     /* Ausgabe bei Erfolg */
     printf("\n\nThank you for your registration.\n");
-    printf("Your account has been created, please press a key to return to the main menue.\n\n");
+    printf("Your account has been created.\n\n\n\n Please press a key to return.");
     MySQLClose (Connection);
     getchar();
     return;

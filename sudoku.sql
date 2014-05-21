@@ -32,6 +32,8 @@ CREATE TABLE IF NOT EXISTS `accounts` (
   `last_name` varchar(25) COLLATE utf8_unicode_ci NOT NULL,
   `username` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
   `password` varchar(40) COLLATE utf8_unicode_ci NOT NULL,
+  `window_width` smallint(5) unsigned DEFAULT 0,
+  `window_height` smallint(5) unsigned DEFAULT 0,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=3 ;
 

@@ -7,7 +7,7 @@
 #include "sudoku_gen.h"
 
 #define MAIN_MENUE_SIZE 3
-#define GAME_MENUE_SIZE 4
+#define GAME_MENUE_SIZE 5
 
 int LoadMainMenue(void);
 void LoadGameMenue(ACCOUNT user);
@@ -23,9 +23,10 @@ void LoadGameMenue(ACCOUNT user);
 int main(void)
 {
 	int m_Exit = 0;
+	char mode[50];
 	do
 	{
-	  system("mode con cols=120 lines=60");
+	  resizeWindow(WINDOW_WIDTH, WINDOW_HEIGHT);
 	  m_Exit = LoadMainMenue( );
 	} while(!m_Exit);
    
@@ -42,6 +43,7 @@ int LoadMainMenue(void) {
    ACCOUNT user;
 
    //createBorder();
+	//createBlock(28);
    do
    {
 		system("cls");
@@ -109,7 +111,14 @@ int LoadMainMenue(void) {
 
 void LoadGameMenue(ACCOUNT user) {
 	int iStatus = 0, iTemp = 1, iLength = 0, i, m_Exit = 0;
-   char *cMenu[GAME_MENUE_SIZE] = { "Play Sudoku     ", "How To Play     ", "Bestenliste     ", "Exit            "};
+   char *cMenu[GAME_MENUE_SIZE] = { "Play Sudoku     ", 
+												"How To Play     ", 
+												"Top List        ",
+												"Settings        ",
+												"Exit            "};
+	if(user.WindowHeight!=0 && user.WindowWidth!=0) {
+	  resizeWindow(user.WindowWidth, user.WindowHeight);
+	}
 
    //createBorder();
    do
@@ -117,7 +126,6 @@ void LoadGameMenue(ACCOUNT user) {
 		system("cls");
 		printf("\t\tG A M E M E N U E\n");
 		printf("\t= = = = = = = = = = = = =\n\n");
-
 		for (i = 0; i < GAME_MENUE_SIZE; i++)
 		{
 			if (i == iTemp-1)
@@ -158,6 +166,9 @@ void LoadGameMenue(ACCOUNT user) {
 		break;
 		case 3:
 			toplist();
+		break;
+		case 4:
+			//loadSettings();
 		break;
 		default:
 			m_Exit = 1;

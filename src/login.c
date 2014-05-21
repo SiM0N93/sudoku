@@ -86,7 +86,7 @@ int authentificationStatus( char cNickname[], char cPassword[] )
 
 ACCOUNT getUser(char cNickname[], char cPassword[])
 {
-    int num_fields=0,i=0, arraysize=0;
+    int num_fields=0,i=0, arraysize=0, width=0, height=0;
     char cQuery[300];
     MYSQL_ROW ROW;
     ACCOUNT user;
@@ -94,7 +94,7 @@ ACCOUNT getUser(char cNickname[], char cPassword[])
     MYSQL *Connection = NULL;
     Connection = MySQLConnect ();
     sprintf(cQuery,
-            "SELECT first_name, last_name, username FROM accounts WHERE username ='%s' AND password=MD5('%s');",
+            "SELECT first_name, last_name, username, window_width, window_height FROM accounts WHERE username ='%s' AND password=MD5('%s');",
             cNickname,
             cPassword
            );
@@ -104,14 +104,16 @@ ACCOUNT getUser(char cNickname[], char cPassword[])
         ROW = mysql_fetch_row( userEntity );
         if( ROW )
         {
-            arraysize = getRowCountSize(ROW);
-            if( arraysize == 3 )
+            arraysize = sizeof(ROW) / sizeof(char);
+            if( arraysize == 4 )
             {
                 strcpy(user.FirstName, ROW[0]);
                 strcpy(user.LastName, ROW[1]);
                 strcpy(user.UserName, ROW[2]);
+					 user.WindowWidth = atoi( ROW[3] );
+					 user.WindowHeight = atoi( ROW[4] );
             } else {
-                DEBUG_Log("Database didnt select [3] rows.");
+                DEBUG_Log("Database didnt select [5] rows.");
             }
         }
     }
